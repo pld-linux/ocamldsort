@@ -1,38 +1,44 @@
 Summary:	Dependency sort tool for ocaml sources
 Summary(pl):	Program do sortowania zaleznosci dla ocamla
 Name:		ocamldsort
-Version:        0.14.3
+Version:	0.14.3
 Release:	1
-License:   	GPL
+License:	GPL
 Group:		Libraries
 Source0:	ftp://quatramaran.ens.fr/pub/ara/ocamldsort/%{name}-%{version}.tar.gz
+# Source0-md5:	1d17aad629dc8c5986929f373ff64238
 BuildRequires:	ocaml >= 3.04-7
 BuildRequires:	ocaml-camlp4 >= 3.04-7
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
-The ocamldsort command scans a set of Objective Caml source files (.ml and .mli files), 
-sorts them according to their dependencies and prints the sorted files in order to link their 
-corresponding .cmo and .cmi files. ocamldsort can be used to compile and link simple projects 
-with one command
+The ocamldsort command scans a set of Objective Caml source files (.ml
+and .mli files), sorts them according to their dependencies and prints
+the sorted files in order to link their corresponding .cmo and .cmi
+files. ocamldsort can be used to compile and link simple projects with
+one command
 
-However for larger projects where separate compilation is desirable, ocamldsort can also be 
-used from within a makefile. See the README file for a typical makefile.
+However for larger projects where separate compilation is desirable,
+ocamldsort can also be used from within a makefile. See the README
+file for a typical makefile.
 
 
 %description -l pl
-Komenda ocamldsort skanuje a nastepnie sortuje zbior plikow zrodlowych Ocamla (.ml i .mli). 
-Sortowanie odbywa sie z uwzglednieniem zachowanie zaleznosci miedzy plikami. Posortowane nazwy plikow
-drukowane sa w kolejnosci umoziwiajacej ich latwe zlinkowanie. ocamldsort moze byc uzywane do kompilacji
-prostych projektow jako tak zwany jednolinikowiec, ale jest on rowniez bardzo przydatny przy budowaniu bardziej 
-skomplikowanych projektow Makefile i takie tam. Zajrzyj do pliku readme po bardziej zaawansowane przyklady.
+Komenda ocamldsort skanuje a nastepnie sortuje zbior plikow zrodlowych
+Ocamla (.ml i .mli). Sortowanie odbywa sie z uwzglednieniem zachowanie
+zaleznosci miedzy plikami. Posortowane nazwy plikow drukowane sa w
+kolejnosci umoziwiajacej ich latwe zlinkowanie. ocamldsort moze byc
+uzywane do kompilacji prostych projektow jako tak zwany
+jednolinikowiec, ale jest on rowniez bardzo przydatny przy budowaniu
+bardziej skomplikowanych projektow Makefile i takie tam. Zajrzyj do
+pliku readme po bardziej zaawansowane przyklady.
 
 %prep
-%setup -q 
+%setup -q
 
 %build
 ./configure --prefix=${RPM_BUILD_ROOT}%{_prefix} \
-	    --mandir=${RPM_BUILD_ROOT}%{_mandir} 
+	    --mandir=${RPM_BUILD_ROOT}%{_mandir}
 
 %{__make} CC="%{__cc} %{rpmcflags} -fPIC" opt
 
