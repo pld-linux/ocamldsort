@@ -16,12 +16,11 @@ The ocamldsort command scans a set of Objective Caml source files (.ml
 and .mli files), sorts them according to their dependencies and prints
 the sorted files in order to link their corresponding .cmo and .cmi
 files. ocamldsort can be used to compile and link simple projects with
-one command
+one command.
 
 However for larger projects where separate compilation is desirable,
 ocamldsort can also be used from within a makefile. See the README
 file for a typical makefile.
-
 
 %description -l pl
 Komenda ocamldsort skanuje a nastepnie sortuje zbior plikow zrodlowych
@@ -37,20 +36,15 @@ pliku readme po bardziej zaawansowane przyklady.
 %setup -q
 
 %build
-./configure --prefix=${RPM_BUILD_ROOT}%{_prefix} \
-	    --mandir=${RPM_BUILD_ROOT}%{_mandir}
-
-%{__make} CC="%{__cc} %{rpmcflags} -fPIC" opt
+%configure
+%{__make}
 
 %install
 rm -rf $RPM_BUILD_ROOT
+install -d $RPM_BUILD_ROOT{%{_bindir},%{_mandir}/man1}
 
-install -d ${RPM_BUILD_ROOT}%{_bindir}
-install ocamldsort.opt ${RPM_BUILD_ROOT}%{_bindir}/ocamldsort
-
-install -d ${RPM_BUILD_ROOT}%{_mandir}/man1/
-install ocamldsort.1 ${RPM_BUILD_ROOT}%{_mandir}/man1/
-
+install ocamldsort.opt		${RPM_BUILD_ROOT}%{_bindir}/ocamldsort
+install ocamldsort.1		${RPM_BUILD_ROOT}%{_mandir}/man1
 
 %clean
 rm -rf $RPM_BUILD_ROOT
@@ -59,4 +53,4 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %doc README Changes THANKS
 %attr(755,root,root) %{_bindir}
-%attr(755,root,root) %{_mandir}
+%{_mandir}/man?/*
