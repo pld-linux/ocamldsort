@@ -23,14 +23,14 @@ ocamldsort can also be used from within a makefile. See the README
 file for a typical makefile.
 
 %description -l pl
-Komenda ocamldsort skanuje a nastepnie sortuje zbior plikow zrodlowych
-Ocamla (.ml i .mli). Sortowanie odbywa sie z uwzglednieniem zachowania
-zaleznosci miedzy plikami. Posortowane nazwy plikow drukowane sa w
-kolejnosci umozliwiajacej ich latwe zlinkowanie. ocamldsort moze byc
-uzywane do kompilacji prostych projektow jako tak zwany
-jednolinikowiec, ale jest on rowniez bardzo przydatny przy budowaniu
-bardziej skomplikowanych projektow Makefile i takie tam. Zajrzyj do
-pliku readme po bardziej zaawansowane przyklady.
+Komenda ocamldsort skanuje a nastêpnie sortuje zbiór plików ¼ród³owych
+Ocamla (.ml i .mli). Sortowanie odbywa siê z uwzglêdnieniem zachowania
+zale¿no¶ci miêdzy plikami. Posortowane nazwy plików wypisywane s± w
+kolejno¶ci umo¿liwiajacej ich ³atwe skonsolidowanie. ocamldsort mo¿e
+byæ u¿ywane do kompilacji prostych projektów jako tak zwany
+jednolinijkowiec, ale jest on rownie¿ bardzo przydatny przy budowaniu
+bardziej skomplikowanych projektów korzystaj±cych z Makefile itp.
+Bardziej zaawansowane przyk³ady znajduj± siê w pliku readme.
 
 %prep
 %setup -q
