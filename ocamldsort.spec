@@ -1,5 +1,5 @@
 Summary:	Dependency sort tool for ocaml sources
-Summary(pl):	Program do sortowania zale¿no¶ci dla ocamla
+Summary(pl.UTF-8):   Program do sortowania zaleÅ¼noÅ›ci dla ocamla
 Name:		ocamldsort
 Version:	0.14.3
 Release:	4
@@ -22,15 +22,15 @@ However for larger projects where separate compilation is desirable,
 ocamldsort can also be used from within a makefile. See the README
 file for a typical makefile.
 
-%description -l pl
-Komenda ocamldsort skanuje a nastêpnie sortuje zbiór plików ¼ród³owych
-Ocamla (.ml i .mli). Sortowanie odbywa siê z uwzglêdnieniem zachowania
-zale¿no¶ci miêdzy plikami. Posortowane nazwy plików wypisywane s± w
-kolejno¶ci umo¿liwiaj±cej ich ³atwe skonsolidowanie. ocamldsort mo¿e
-byæ u¿ywane do kompilacji prostych projektów jako tak zwany
-jednolinijkowiec, ale jest on równie¿ bardzo przydatny przy budowaniu
-bardziej skomplikowanych projektów korzystaj±cych z Makefile itp.
-Bardziej zaawansowane przyk³ady znajduj± siê w pliku readme.
+%description -l pl.UTF-8
+Komenda ocamldsort skanuje a nastÄ™pnie sortuje zbiÃ³r plikÃ³w ÅºrÃ³dÅ‚owych
+Ocamla (.ml i .mli). Sortowanie odbywa siÄ™ z uwzglÄ™dnieniem zachowania
+zaleÅ¼noÅ›ci miÄ™dzy plikami. Posortowane nazwy plikÃ³w wypisywane sÄ… w
+kolejnoÅ›ci umoÅ¼liwiajÄ…cej ich Å‚atwe skonsolidowanie. ocamldsort moÅ¼e
+byÄ‡ uÅ¼ywane do kompilacji prostych projektÃ³w jako tak zwany
+jednolinijkowiec, ale jest on rÃ³wnieÅ¼ bardzo przydatny przy budowaniu
+bardziej skomplikowanych projektÃ³w korzystajÄ…cych z Makefile itp.
+Bardziej zaawansowane przykÅ‚ady znajdujÄ… siÄ™ w pliku readme.
 
 %prep
 %setup -q
