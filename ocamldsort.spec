@@ -1,5 +1,5 @@
 Summary:	Dependency sort tool for ocaml sources
-Summary(pl.UTF-8):   Program do sortowania zależności dla ocamla
+Summary(pl.UTF-8):	Program do sortowania zależności dla ocamla
 Name:		ocamldsort
 Version:	0.14.3
 Release:	4
