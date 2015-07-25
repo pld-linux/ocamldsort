@@ -1,8 +1,17 @@
+#
+# Conditional build:
+%bcond_without	ocaml_opt	# skip building native optimized binaries (bytecode is always built)
+
+# not yet available on x32 (ocaml 4.02.1), remove when upstream will support it
+%ifnarch %{ix86} %{x8664} arm aarch64 ppc sparc sparcv9
+%undefine	with_ocaml_opt
+%endif
+
 Summary:	Dependency sort tool for ocaml sources
 Summary(pl.UTF-8):	Program do sortowania zależności dla ocamla
 Name:		ocamldsort
 Version:	0.15.0
-Release:	2
+Release:	3
 License:	GPL
 Group:		Libraries
 Source0:	ftp://quatramaran.ens.fr/pub/ara/ocamldsort/%{name}-%{version}.tar.gz
@@ -44,8 +53,12 @@ Bardziej zaawansowane przykłady znajdują się w pliku readme.
 rm -rf $RPM_BUILD_ROOT
 install -d $RPM_BUILD_ROOT{%{_bindir},%{_mandir}/man1}
 
-install ocamldsort.opt		${RPM_BUILD_ROOT}%{_bindir}/ocamldsort
-install ocamldsort.1		${RPM_BUILD_ROOT}%{_mandir}/man1
+%if %{with ocaml_opt}
+install ocamldsort.opt	$RPM_BUILD_ROOT%{_bindir}/ocamldsort
+%else
+install ocamldsort	$RPM_BUILD_ROOT%{_bindir}/ocamldsort
+%endif
+install ocamldsort.1	$RPM_BUILD_ROOT%{_mandir}/man1
 
 %clean
 rm -rf $RPM_BUILD_ROOT
